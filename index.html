@@ -8,22 +8,36 @@
 </head>
 <body>
     <div id="app">
-        <h1>{{ msg }}</h1>
-        <h1 v-text='msg'></h1>
-        <h1 v-html='msg'></h1>
+        <h1>你好，{{ msg }}</h1>
+        <h2>{{ tag }}</h2>
+        <h3>{{ car.color }}</h3>
+        <h3 v-text="car.color"></h3>
+        <h1 v-text='msg' title="haha"></h1>
+        <h1 v-html='tag' title="haha"></h1>
+        <h2 v-html='car.type'></h2>
+        <input type="text" v-model="msg">
+        <input type="text" v-model='car.color'>
+        <button v-on:click="sayHi">按钮</button>
     </div>
+    <script src="./src/watcher.js"></script>
+    <script src="./src/observer.js"></script>
     <script src="./src/vue.js"></script>
     <script src="./src/compile.js"></script>
     <script>
         const vm = new Vue({
             el: '#app',
             data: {
-                msg: '自定义Vue框架'
+                msg: '自定义Vue框架',
+                tag: '<h1>哈哈</h1>',
+                car: {
+                    color: 'yellow',
+                    type: 'Benz'
+                }
             },
             methods: {
                sayHi() {
-                   console.log('hello vue')
-               } 
+                   console.log(this)
+               }
             },
         })
     </script>
