@@ -39,7 +39,7 @@ class Compile {
             // 编译子节点
             if (this.isElementNode(node)) {
                 // 如果是元素，需要解析指令
-                this,this.complieElement(node)
+                this.complieElement(node)
                 
             } else if (this.isTextNode(node)) {
                 // 如果是文本节点，需要解析插值表达式
